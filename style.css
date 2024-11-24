@@ -1,43 +1,137 @@
+/* Centering the main container */
 .main {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 850px;
 }
 
+/* Canvas styling */
 .canvas {
-    border: 2px double black;
+    border: 3px solid #333;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* Top and bottom section styling */
 .top,
 .bottom {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    margin: 20px 0 20px 0;
+    align-items: center;
+    margin: 20px 0;
 }
 
-.block,
+/* Blocks for inputs and labels */
+.block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    flex: 1;
+    color: #333;
+}
+
+.block p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #555;
+    font-weight: bold;
+}
+
+/* Input fields and buttons */
 input,
 select,
 button {
-    width: 80%;
+    width: 90%;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: all 0.3s ease-in-out;
 }
 
-.column {
-    display: flex;
-    flex-direction: column;
+input:focus,
+select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Button styling */
+button {
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+}
+
+button.btn-danger {
+    background: linear-gradient(45deg, #ff4d4d, #ff6f6f);
+    box-shadow: 0 4px 8px rgba(255, 77, 77, 0.4);
+}
+
+button.btn-danger:hover {
+    background: #ff3333;
+}
+
+button.btn-success {
+    background: linear-gradient(45deg, #4caf50, #66bb6a);
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.4);
+}
+
+button.btn-success:hover {
+    background: #43a047;
+}
+
+button.btn-warning {
+    background: linear-gradient(45deg, #ffa726, #ffb74d);
+    box-shadow: 0 4px 8px rgba(255, 167, 38, 0.4);
+}
+
+button.btn-warning:hover {
+    background: #fb8c00;
 }
 
 .bottom>button {
     margin: 10px;
+    padding: 10px 20px;
 }
 
-.top>.block {
-    margin: 10px;
-}
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .main {
+        width: 95%;
+        padding: 20px;
+    }
 
-.block>p {
-    margin: 10px auto;
-    width: 50%;
+    .top,
+    .bottom {
+        flex-direction: column;
+    }
+
+    .block,
+    button {
+        width: 100%;
+    }
+
+    .block p {
+        margin-bottom: 5px;
+    }
+
+    .canvas {
+        width: 100%;
+        height: auto;
+    }
 }
